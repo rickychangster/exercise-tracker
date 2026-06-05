@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 📖 Setup & troubleshooting guide
+    url: https://github.com/rickychangster/exercise-tracker/blob/main/docs/SETUP.md
+    about: Most setup problems (key format, SHEET_ID, meta tab) are covered here — please check first.

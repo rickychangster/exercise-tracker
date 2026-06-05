@@ -53,6 +53,10 @@ Either layout works (vertical key|value, or headers+values):
 
 ### Option A — Apps Script (no Google Cloud) ✅ easiest
 
+> ℹ️ **Community-tested.** This path is newer than the service-account one. If
+> you hit a snag, please [open an issue](https://github.com/rickychangster/exercise-tracker/issues)
+> with your `/api/health` output — it helps everyone.
+
 1. In your sheet: **Extensions → Apps Script**.
 2. Delete the stub, paste all of [`apps-script/Code.gs`](../apps-script/Code.gs), **Save**.
 3. *(Optional, recommended)* **Project Settings → Script Properties →** add
