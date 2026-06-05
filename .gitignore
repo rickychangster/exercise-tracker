@@ -1,0 +1,34 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+
+# production
+/build
+
+# testing
+/coverage
+
+# misc
+.DS_Store
+*.pem
+
+# personal config kept out of the public repo (e.g. your real exercise list)
+*.local.csv
+
+# env / secrets
+.env
+.env*.local
+.env.local
+service-account*.json
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo

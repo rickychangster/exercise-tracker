@@ -1,0 +1,11 @@
+name,minRestDays,overdueDays,weeklyOnly,unit,category,active,sets,reps,weight,tip
+Push-ups,1,4,no,,upper,yes,3,12,,Full range · slow negative
+Pull-ups,1,5,no,,upper,yes,3,8,,Dead hang at the bottom
+Dumbbell Press,2,7,no,lb,upper,yes,3,10,30,Elbows ~45° · controlled
+Squats,1,4,no,lb,lower,yes,3,15,,Knees track over toes
+Lunges,2,7,no,lb,lower,yes,3,10/side,20,Start with the weaker side
+Deadlift,3,8,no,lb,lower,yes,3,8,95,Neutral spine · brace core
+Plank,0,3,no,sec,core,yes,3,45 sec,,Squeeze glutes · neutral spine
+Run,2,7,yes,km,cardio,yes,,5 km,,Conversational pace
+Bike,2,7,no,min,cardio,yes,,30 min,,Zone 2 effort
+Mobility,0,3,no,min,core,yes,,10 min,,Daily movement snack

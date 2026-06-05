@@ -1,0 +1,17 @@
+{
+  "name": "Exercise Tracker",
+  "short_name": "Exercise",
+  "description": "Flexible exercise tracker with gentle cadence nudges.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eefbf4",
+  "theme_color": "#10b981",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
