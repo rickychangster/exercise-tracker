@@ -7,11 +7,12 @@ Three parts: **(1)** the sheet, **(2)** a backend, **(3)** deploy + protect.
 
 ## 1. Make your sheet
 
-The fastest way is to copy a ready-made template:
+The fastest way is to copy the ready-made template (tabs, headers, sample rows
+all set up):
 
-> **📋 Template:** open the template sheet → **File → Make a copy**.
-> *(Maintainer: publish a sheet "Anyone with link → Viewer" and drop its
-> `…/copy` link here.)*
+> **📋 [Click here to copy the template sheet →](https://docs.google.com/spreadsheets/d/1UyFSa-XbwTxpOsPBRSQRy8QN2Dmcnp6A2v4HuLQYgoU/copy)**
+> This opens Google's "Make a copy" dialog and drops a copy in your Drive.
+> Then edit the `config` tab to your own exercises.
 
 Prefer to build it by hand? Create a spreadsheet with **three tabs**
 (names lowercase, exact): `config`, `log`, `meta`.

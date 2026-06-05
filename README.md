@@ -34,8 +34,9 @@ a Google Sheet → see **[docs/SETUP.md](docs/SETUP.md)**.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Frickychangster%2Fexercise-tracker&env=ACCESS_PASSPHRASE,APP_TIMEZONE&envDescription=Set%20a%20passphrase%20to%20protect%20your%20tracker.%20Add%20your%20backend%20vars%20after%20deploy.)
 
-Then follow **[docs/SETUP.md](docs/SETUP.md)** to connect your sheet. You pick one
-of two backends:
+To make it yours: **[copy the template sheet](https://docs.google.com/spreadsheets/d/1UyFSa-XbwTxpOsPBRSQRy8QN2Dmcnp6A2v4HuLQYgoU/copy)**,
+then follow **[docs/SETUP.md](docs/SETUP.md)** to connect it. You pick one of two
+backends:
 
 | Backend | Setup effort | Notes |
 |---|---|---|
