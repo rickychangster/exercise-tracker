@@ -66,7 +66,7 @@ function getConfig() {
   var idx = {
     name: col('name'), minRestDays: col('minrestdays'), overdueDays: col('overduedays'),
     weeklyOnly: col('weeklyonly'), unit: col('unit'), category: col('category'),
-    active: col('active'), sets: col('sets'), reps: col('reps'), weight: col('weight'), tip: col('tip')
+    active: col('active'), sets: col('sets'), reps: col('reps'), weight: col('weight'), tip: col('tip'), link: col('link')
   };
   function g(r, i) { return i >= 0 ? r[i] : undefined; }
   return values.slice(1).map(function (r) {
@@ -79,7 +79,7 @@ function getConfig() {
       category: str(g(r, idx.category)),
       active: String(g(r, idx.active) == null ? 'yes' : g(r, idx.active)).toLowerCase() !== 'no',
       sets: str(g(r, idx.sets)), reps: str(g(r, idx.reps)),
-      weight: str(g(r, idx.weight)), tip: str(g(r, idx.tip))
+      weight: str(g(r, idx.weight)), tip: str(g(r, idx.tip)), link: str(g(r, idx.link))
     };
   }).filter(function (c) { return c.name && c.active; });
 }

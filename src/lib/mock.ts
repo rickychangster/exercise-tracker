@@ -5,11 +5,11 @@
 import type { ExerciseConfig, LogEntry, Meta } from "./types";
 
 const SAMPLE_CONFIG: ExerciseConfig[] = [
-  { name: "Push-ups", minRestDays: 1, overdueDays: 4, weeklyOnly: false, category: "upper", active: true, sets: "3", reps: "12", tip: "Full range, slow negative" },
-  { name: "Pull-ups", minRestDays: 1, overdueDays: 5, weeklyOnly: false, category: "upper", active: true, sets: "3", reps: "8", tip: "Dead hang at the bottom" },
-  { name: "Squats", minRestDays: 1, overdueDays: 4, weeklyOnly: false, category: "lower", active: true, sets: "3", reps: "15", tip: "Knees track over toes" },
-  { name: "Plank", minRestDays: 0, overdueDays: 3, weeklyOnly: false, category: "core", active: true, sets: "3", reps: "45 sec", tip: "Squeeze glutes, neutral spine" },
-  { name: "Run", minRestDays: 2, overdueDays: 7, weeklyOnly: true, unit: "km", category: "cardio", active: true, reps: "5 km", tip: "Conversational pace" },
+  { name: "Push-ups", minRestDays: 1, overdueDays: 4, weeklyOnly: false, category: "upper", active: true, sets: "3", reps: "12", tip: "Full range, slow negative", link: "https://www.youtube.com/results?search_query=Push-ups+proper+form" },
+  { name: "Pull-ups", minRestDays: 1, overdueDays: 5, weeklyOnly: false, category: "upper", active: true, sets: "3", reps: "8", tip: "Dead hang at the bottom", link: "https://www.youtube.com/results?search_query=Pull-ups+proper+form" },
+  { name: "Squats", minRestDays: 1, overdueDays: 4, weeklyOnly: false, category: "lower", active: true, sets: "3", reps: "15", tip: "Knees track over toes", link: "https://www.youtube.com/results?search_query=Squats+proper+form" },
+  { name: "Plank", minRestDays: 0, overdueDays: 3, weeklyOnly: false, category: "core", active: true, sets: "3", reps: "45 sec", tip: "Squeeze glutes, neutral spine", link: "https://www.youtube.com/results?search_query=Plank+proper+form" },
+  { name: "Run", minRestDays: 2, overdueDays: 7, weeklyOnly: true, unit: "km", category: "cardio", active: true, reps: "5 km", tip: "Conversational pace", link: "https://www.youtube.com/results?search_query=Running+proper+form" },
 ];
 
 const SAMPLE_META: Meta = { displayName: "there", timezone: "America/Los_Angeles" };

@@ -1,11 +1,11 @@
-name,minRestDays,overdueDays,weeklyOnly,unit,category,active,sets,reps,weight,tip
-Push-ups,1,4,no,,upper,yes,3,12,,Full range · slow negative
-Pull-ups,1,5,no,,upper,yes,3,8,,Dead hang at the bottom
-Dumbbell Press,2,7,no,lb,upper,yes,3,10,30,Elbows ~45° · controlled
-Squats,1,4,no,lb,lower,yes,3,15,,Knees track over toes
-Lunges,2,7,no,lb,lower,yes,3,10/side,20,Start with the weaker side
-Deadlift,3,8,no,lb,lower,yes,3,8,95,Neutral spine · brace core
-Plank,0,3,no,sec,core,yes,3,45 sec,,Squeeze glutes · neutral spine
-Run,2,7,yes,km,cardio,yes,,5 km,,Conversational pace
-Bike,2,7,no,min,cardio,yes,,30 min,,Zone 2 effort
-Mobility,0,3,no,min,core,yes,,10 min,,Daily movement snack
+name,minRestDays,overdueDays,weeklyOnly,unit,category,active,sets,reps,weight,tip,link
+Push-ups,1,4,no,,upper,yes,3,12,,Full range · slow negative,https://www.youtube.com/results?search_query=Push-ups+proper+form
+Pull-ups,1,5,no,,upper,yes,3,8,,Dead hang at the bottom,https://www.youtube.com/results?search_query=Pull-ups+proper+form
+Dumbbell Press,2,7,no,lb,upper,yes,3,10,30,Elbows ~45° · controlled,https://www.youtube.com/results?search_query=Dumbbell+bench+press+proper+form
+Squats,1,4,no,lb,lower,yes,3,15,,Knees track over toes,https://www.youtube.com/results?search_query=Squats+proper+form
+Lunges,2,7,no,lb,lower,yes,3,10/side,20,Start with the weaker side,https://www.youtube.com/results?search_query=Lunges+proper+form
+Deadlift,3,8,no,lb,lower,yes,3,8,95,Neutral spine · brace core,https://www.youtube.com/results?search_query=Deadlift+proper+form
+Plank,0,3,no,sec,core,yes,3,45 sec,,Squeeze glutes · neutral spine,https://www.youtube.com/results?search_query=Plank+proper+form
+Run,2,7,yes,km,cardio,yes,,5 km,,Conversational pace,https://www.youtube.com/results?search_query=Running+proper+form
+Bike,2,7,no,min,cardio,yes,,30 min,,Zone 2 effort,https://www.youtube.com/results?search_query=Indoor+cycling+proper+form
+Mobility,0,3,no,min,core,yes,,10 min,,Daily movement snack,https://www.youtube.com/results?search_query=Daily+mobility+routine

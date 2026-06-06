@@ -13,6 +13,8 @@ export interface ExerciseConfig {
   reps?: string;
   weight?: string;
   tip?: string;
+  // Form-demo reference (e.g. a YouTube link), shown in the card's info panel.
+  link?: string;
 }
 
 export interface LogEntry {

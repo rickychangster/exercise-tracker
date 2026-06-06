@@ -19,7 +19,8 @@ Prefer to build it by hand? Create a spreadsheet with **three tabs**
 
 ### `config` tab — your exercises (header row required)
 Headers (any order — parsed by name): `name`, `minRestDays`, `overdueDays`,
-`weeklyOnly`, `unit`, `category`, `active`, `sets`, `reps`, `weight`, `tip`.
+`weeklyOnly`, `unit`, `category`, `active`, `sets`, `reps`, `weight`, `tip`,
+`link`.
 
 Quickest fill: **File → Import →** upload `docs/config-seed.csv` → *Replace
 current sheet*. Then edit to taste.
@@ -33,6 +34,7 @@ current sheet*. Then edit to taste.
 | `unit`, `category` | optional; `category` drives the filter chips + emoji |
 | `active` | `no` hides it from the app |
 | `sets`/`reps`/`weight`/`tip` | recommendation shown on the card |
+| `link` | optional form-demo URL; tap **ⓘ** on a card to see the cue + a "Watch demo" link (the seed CSV pre-fills YouTube searches) |
 
 ### `log` tab — keep these headers in this order
 `id`, `exercise`, `timestamp`, `date`, `weight`, `reps`, `sets`, `note`.

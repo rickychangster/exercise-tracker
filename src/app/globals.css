@@ -144,15 +144,17 @@ header.app .date {
 
 /* Cards */
 .card {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   background: var(--card);
   border-radius: 18px;
   padding: 14px;
   margin-bottom: 10px;
   box-shadow: var(--shadow);
   border-left: 5px solid var(--line);
+}
+.card-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 .card.overdue {
   border-left-color: var(--overdue);
@@ -181,10 +183,59 @@ header.app .date {
   flex: 1 1 auto;
   min-width: 0;
 }
+.card .name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 .card .name {
   font-weight: 700;
   font-size: 16px;
   letter-spacing: -0.01em;
+}
+.info-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+.card.open .info-btn {
+  color: var(--accent-dark);
+}
+
+/* Inline form-demo panel */
+.card-detail {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: detailIn 0.16s ease;
+}
+@keyframes detailIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+.card-detail .cue {
+  font-size: 14px;
+  color: var(--ink);
+}
+.card-detail .demo {
+  align-self: flex-start;
+  background: var(--ready-bg);
+  color: var(--accent-dark);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 9px 16px;
+  border-radius: 12px;
 }
 .card .rx {
   font-size: 14px;

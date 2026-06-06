@@ -85,6 +85,7 @@ export default function Home() {
   const [displayName, setDisplayName] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
   const [category, setCategory] = useState<string>("All");
+  const [expanded, setExpanded] = useState<string | null>(null);
   const [pending, setPending] = useState<PendingLog | null>(null);
   const [details, setDetails] = useState<DetailsState | null>(null);
   const [countdown, setCountdown] = useState(DETAILS_SECONDS);
@@ -305,27 +306,60 @@ export default function Home() {
             <div className="group-title">
               {STATUS_LABEL[g.status]} ({g.items.length})
             </div>
-            {g.items.map((s) => (
-              <div className={`card ${s.status}`} key={s.exercise}>
-                <div className="emoji">{CATEGORY_EMOJI[s.config.category ?? ""] ?? "•"}</div>
-                <div className="info">
-                  <div className="name">{s.exercise}</div>
-                  {prescription(s) && <div className="rx">{prescription(s)}</div>}
-                  {lastLabel(s) ? (
-                    <div className="last">{lastLabel(s)}</div>
-                  ) : (
-                    s.config.tip && <div className="tip">{s.config.tip}</div>
-                  )}
-                  <div className="meta">
-                    <span className={`badge ${s.status}`}>{STATUS_LABEL[s.status]}</span>
-                    <span className="since">{sinceLabel(s)}</span>
+            {g.items.map((s) => {
+              const hasInfo = Boolean(s.config.tip || s.config.link);
+              const isOpen = expanded === s.exercise;
+              return (
+                <div className={`card ${s.status}${isOpen ? " open" : ""}`} key={s.exercise}>
+                  <div className="card-row">
+                    <div className="emoji">{CATEGORY_EMOJI[s.config.category ?? ""] ?? "•"}</div>
+                    <div className="info">
+                      <div className="name-row">
+                        <span className="name">{s.exercise}</span>
+                        {hasInfo && (
+                          <button
+                            className="info-btn"
+                            aria-label={`How to do ${s.exercise}`}
+                            aria-expanded={isOpen}
+                            onClick={() => setExpanded(isOpen ? null : s.exercise)}
+                          >
+                            ⓘ
+                          </button>
+                        )}
+                      </div>
+                      {prescription(s) && <div className="rx">{prescription(s)}</div>}
+                      {lastLabel(s) ? (
+                        <div className="last">{lastLabel(s)}</div>
+                      ) : (
+                        s.config.tip && <div className="tip">{s.config.tip}</div>
+                      )}
+                      <div className="meta">
+                        <span className={`badge ${s.status}`}>{STATUS_LABEL[s.status]}</span>
+                        <span className="since">{sinceLabel(s)}</span>
+                      </div>
+                    </div>
+                    <button className="log" onClick={() => startLog(s.exercise)}>
+                      Log
+                    </button>
                   </div>
+                  {isOpen && (
+                    <div className="card-detail">
+                      {s.config.tip && <div className="cue">▸ {s.config.tip}</div>}
+                      {s.config.link && (
+                        <a
+                          className="demo"
+                          href={s.config.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          ▶ Watch demo
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
-                <button className="log" onClick={() => startLog(s.exercise)}>
-                  Log
-                </button>
-              </div>
-            ))}
+              );
+            })}
           </section>
         ))}
 

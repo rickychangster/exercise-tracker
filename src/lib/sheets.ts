@@ -78,6 +78,7 @@ async function getConfig(): Promise<ExerciseConfig[]> {
     reps: col("reps"),
     weight: col("weight"),
     tip: col("tip"),
+    link: col("link"),
   };
   const get = (r: unknown[], i: number) => (i >= 0 ? r[i] : undefined);
 
@@ -95,6 +96,7 @@ async function getConfig(): Promise<ExerciseConfig[]> {
       reps: str(get(r, idx.reps)),
       weight: str(get(r, idx.weight)),
       tip: str(get(r, idx.tip)),
+      link: str(get(r, idx.link)),
     }))
     .filter((c) => c.name && c.active);
 }
