@@ -327,12 +327,12 @@ export default function Home() {
                           </button>
                         )}
                       </div>
-                      {prescription(s) && <div className="rx">{prescription(s)}</div>}
                       {lastLabel(s) ? (
                         <div className="last">{lastLabel(s)}</div>
                       ) : (
                         s.config.tip && <div className="tip">{s.config.tip}</div>
                       )}
+                      {prescription(s) && <div className="rx">{prescription(s)}</div>}
                       <div className="meta">
                         <span className={`badge ${s.status}`}>{STATUS_LABEL[s.status]}</span>
                         <span className="since">{sinceLabel(s)}</span>

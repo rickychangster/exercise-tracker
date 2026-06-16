@@ -40,7 +40,14 @@ async function buildDashboard() {
       }
       return state;
     })
-    .sort((a, b) => ORDER[a.status] - ORDER[b.status]);
+    .sort((a, b) => {
+      const statusDiff = ORDER[a.status] - ORDER[b.status];
+      if (statusDiff !== 0) return statusDiff;
+      // Within a group: longest since last done first; never done (null) → top
+      const da = a.daysSince ?? Infinity;
+      const db = b.daysSince ?? Infinity;
+      return db - da;
+    });
 
   const summary = buildSummary(logs, now, tz, 7);
 

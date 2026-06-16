@@ -197,7 +197,7 @@ header.app .date {
   border: none;
   background: none;
   padding: 0;
-  font-size: 16px;
+  font-size: 22px;
   line-height: 1;
   color: var(--muted);
   cursor: pointer;
@@ -253,8 +253,10 @@ header.app .date {
   text-overflow: ellipsis;
 }
 .card .last {
+  font-size: 15px;
   color: var(--accent-dark);
   font-weight: 600;
+  margin-top: 2px;
 }
 .card .meta {
   display: flex;
