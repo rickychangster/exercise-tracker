@@ -30,7 +30,7 @@ async function buildDashboard() {
         .map((l) => l.timestamp);
       const state = deriveState(c, timestamps, now, tz);
       const le = lastEntryFor(logs, c.name);
-      if (le && (le.weight || le.reps || le.sets)) {
+      if (le) {
         state.last = {
           weight: le.weight,
           reps: le.reps,

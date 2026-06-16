@@ -62,8 +62,9 @@ function lastLabel(s: ExerciseState): string | null {
   const parts: string[] = [];
   if (s.last.weight) parts.push(`${s.last.weight} lb`);
   if (s.last.reps) parts.push(`× ${s.last.reps}`);
-  if (parts.length === 0) return null;
-  return `last: ${parts.join(" ")} (${sinceLabel(s)})`;
+  if (s.last.sets && !s.last.reps) parts.push(`${s.last.sets} sets`);
+  const stat = parts.length ? parts.join(" ") : "done";
+  return `last: ${stat} (${sinceLabel(s)})`;
 }
 
 interface PendingLog {
