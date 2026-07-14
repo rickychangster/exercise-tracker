@@ -59,11 +59,11 @@ function prescription(s: ExerciseState): string {
 
 function lastLabel(s: ExerciseState): string | null {
   if (!s.last) return null;
-  const parts: string[] = [];
-  if (s.last.weight) parts.push(`${s.last.weight} lb`);
-  if (s.last.reps) parts.push(`× ${s.last.reps}`);
-  if (s.last.sets && !s.last.reps) parts.push(`${s.last.sets} sets`);
-  const stat = parts.length ? parts.join(" ") : "done";
+  const { weight, reps, sets } = s.last;
+  const volume =
+    sets && reps ? `${sets} × ${reps}` : reps ? `${reps} reps` : sets ? `${sets} sets` : "";
+  const parts = [volume, weight ? `${weight} lb` : ""].filter(Boolean);
+  const stat = parts.length ? parts.join(" · ") : "done";
   return `last: ${stat} (${sinceLabel(s)})`;
 }
 
