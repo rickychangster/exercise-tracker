@@ -50,6 +50,7 @@ export async function PATCH(req: NextRequest) {
     weight: str(body.weight),
     reps: str(body.reps),
     sets: str(body.sets),
+    note: str(body.note),
   });
   return NextResponse.json({ updated });
 }

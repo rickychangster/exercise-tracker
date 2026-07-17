@@ -39,6 +39,6 @@ export const appendLog = (entry: Parameters<typeof sheetsProvider.appendLog>[0])
   provider().appendLog(entry);
 export const updateLogDetails = (
   id: string,
-  details: { weight?: string; reps?: string; sets?: string },
+  details: { weight?: string; reps?: string; sets?: string; note?: string },
 ) => provider().updateLogDetails(id, details);
 export const deleteLogRow = (id: string) => provider().deleteLogRow(id);

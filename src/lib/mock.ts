@@ -31,7 +31,7 @@ export const mockProvider = {
   },
   async updateLogDetails(
     id: string,
-    details: { weight?: string; reps?: string; sets?: string },
+    details: { weight?: string; reps?: string; sets?: string; note?: string },
   ): Promise<boolean> {
     const e = mockLog.find((x) => x.id === id);
     if (!e) return false;

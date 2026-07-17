@@ -35,6 +35,7 @@ async function buildDashboard() {
           weight: le.weight,
           reps: le.reps,
           sets: le.sets,
+          note: le.note,
           timestamp: le.timestamp,
         };
       }

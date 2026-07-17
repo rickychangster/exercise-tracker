@@ -138,7 +138,7 @@ function updateDetails(id, details) {
   var sh = SS.getSheetByName('log');
   var row = findRowById(sh, id);
   if (row === -1) return false;
-  sh.getRange(row, 5, 1, 3).setValues([[details.weight || '', details.reps || '', details.sets || '']]);
+  sh.getRange(row, 5, 1, 4).setValues([[details.weight || '', details.reps || '', details.sets || '', details.note || '']]);
   return true;
 }
 

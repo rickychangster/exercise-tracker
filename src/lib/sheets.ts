@@ -180,7 +180,7 @@ async function appendLog(entry: LogEntry): Promise<void> {
 
 async function updateLogDetails(
   id: string,
-  details: { weight?: string; reps?: string; sets?: string },
+  details: { weight?: string; reps?: string; sets?: string; note?: string },
 ): Promise<boolean> {
   const sheets = sheetsClient();
   const idCol = await sheets.spreadsheets.values.get({
@@ -194,9 +194,11 @@ async function updateLogDetails(
 
   await sheets.spreadsheets.values.update({
     spreadsheetId: sheetId(),
-    range: `log!E${row}:G${row}`,
+    range: `log!E${row}:H${row}`,
     valueInputOption: "RAW",
-    requestBody: { values: [[details.weight ?? "", details.reps ?? "", details.sets ?? ""]] },
+    requestBody: {
+      values: [[details.weight ?? "", details.reps ?? "", details.sets ?? "", details.note ?? ""]],
+    },
   });
   return true;
 }

@@ -38,7 +38,7 @@ export interface ExerciseState {
   daysSince: number | null;
   status: Status;
   // Actuals from the most recent log, for "last time" recall + prefill.
-  last?: { weight?: string; reps?: string; sets?: string; timestamp: string };
+  last?: { weight?: string; reps?: string; sets?: string; note?: string; timestamp: string };
 }
 
 export interface LogWarnings {

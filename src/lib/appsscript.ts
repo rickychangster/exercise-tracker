@@ -51,7 +51,7 @@ export const appsScriptProvider = {
   },
   async updateLogDetails(
     id: string,
-    details: { weight?: string; reps?: string; sets?: string },
+    details: { weight?: string; reps?: string; sets?: string; note?: string },
   ): Promise<boolean> {
     const r = (await post({ op: "update", id, details })) as { updated?: boolean };
     return Boolean(r.updated);

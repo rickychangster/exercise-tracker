@@ -78,6 +78,7 @@ interface DetailsState {
   weight: string;
   reps: string;
   sets: string;
+  note: string;
 }
 
 export default function Home() {
@@ -201,6 +202,7 @@ export default function Home() {
       weight: s?.last?.weight ?? s?.config.weight ?? "",
       reps: s?.last?.reps ?? s?.config.reps ?? "",
       sets: s?.last?.sets ?? s?.config.sets ?? "",
+      note: s?.last?.note ?? "",
     });
 
     // Write (idempotent on id), then reconcile with server truth.
@@ -224,12 +226,12 @@ export default function Home() {
   async function saveDetails() {
     if (!details) return;
     stopCountdown();
-    const { id, weight, reps, sets } = details;
+    const { id, weight, reps, sets, note } = details;
     setDetails(null);
     await fetch("/api/log", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, weight, reps, sets }),
+      body: JSON.stringify({ id, weight, reps, sets, note }),
     });
     showToast("Details saved 💾");
   }
@@ -328,11 +330,12 @@ export default function Home() {
                           </button>
                         )}
                       </div>
-                      {lastLabel(s) ? (
-                        <div className="last">{lastLabel(s)}</div>
-                      ) : (
-                        s.config.tip && <div className="tip">{s.config.tip}</div>
-                      )}
+                      {lastLabel(s) && <div className="last">{lastLabel(s)}</div>}
+                      {s.last?.note ? (
+                        <div className="note">{s.last.note}</div>
+                      ) : !s.last && s.config.tip ? (
+                        <div className="tip">{s.config.tip}</div>
+                      ) : null}
                       {prescription(s) && <div className="rx">{prescription(s)}</div>}
                       <div className="meta">
                         <span className={`badge ${s.status}`}>{STATUS_LABEL[s.status]}</span>
@@ -425,6 +428,17 @@ export default function Home() {
                 inputMode="text"
                 value={details.sets}
                 onChange={(e) => setDetails({ ...details, sets: e.target.value })}
+              />
+            </label>
+          </div>
+          <div className="details-note" onFocusCapture={stopCountdown}>
+            <label>
+              Note
+              <input
+                inputMode="text"
+                placeholder="optional"
+                value={details.note}
+                onChange={(e) => setDetails({ ...details, note: e.target.value })}
               />
             </label>
           </div>
