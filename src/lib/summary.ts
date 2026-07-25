@@ -33,6 +33,7 @@ export interface Summary {
   sessions: number; // total logs in the window
   activeDays: number; // distinct days with at least one log
   progress: ProgressItem[];
+  byDay: { date: string; count: number }[]; // length=windowDays, oldest first, today last
 }
 
 /**
@@ -54,6 +55,19 @@ export function buildSummary(
   });
 
   const days = new Set(inWindow.map((l) => l.date || localDateKey(l.timestamp, timeZone)));
+
+  // Per-day session counts for the strip visual.
+  const dayCounts = new Map<string, number>();
+  for (const l of inWindow) {
+    const d = l.date || localDateKey(l.timestamp, timeZone);
+    dayCounts.set(d, (dayCounts.get(d) ?? 0) + 1);
+  }
+  const MS = 86_400_000;
+  const todayMs = Date.parse(todayKey + "T00:00:00Z");
+  const byDay = Array.from({ length: windowDays }, (_, i) => {
+    const dateKey = new Date(todayMs - (windowDays - 1 - i) * MS).toISOString().slice(0, 10);
+    return { date: dateKey, count: dayCounts.get(dateKey) ?? 0 };
+  });
 
   // Progress: per exercise, compare the two most recent entries that have actuals.
   const byExercise = new Map<string, LogEntry[]>();
@@ -97,5 +111,6 @@ export function buildSummary(
     sessions: inWindow.length,
     activeDays: days.size,
     progress,
+    byDay,
   };
 }

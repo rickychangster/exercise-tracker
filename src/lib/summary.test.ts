@@ -70,4 +70,19 @@ describe("buildSummary", () => {
     ];
     expect(buildSummary(logs, NOW, TZ, 7).progress).toHaveLength(0);
   });
+
+  it("byDay has 7 entries, oldest first, today last, correct counts", () => {
+    const logs = [
+      entry("A", 0), entry("B", 0), // today: 2 sessions
+      entry("C", 2),                 // 2 days ago: 1 session
+      entry("D", 9),                 // outside 7-day window: ignored
+    ];
+    const s = buildSummary(logs, NOW, TZ, 7);
+    expect(s.byDay).toHaveLength(7);
+    expect(s.byDay[6].count).toBe(2); // today
+    expect(s.byDay[4].count).toBe(1); // 2 days ago
+    expect(s.byDay[0].count).toBe(0); // 6 days ago
+    // dates are ascending
+    expect(s.byDay[6].date > s.byDay[0].date).toBe(true);
+  });
 });

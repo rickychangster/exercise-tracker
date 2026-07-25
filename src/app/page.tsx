@@ -41,6 +41,7 @@ interface Summary {
   sessions: number;
   activeDays: number;
   progress: ProgressItem[];
+  byDay: { date: string; count: number }[];
 }
 
 function sinceLabel(s: ExerciseState): string {
@@ -273,6 +274,20 @@ export default function Home() {
           <div className="summary-top">
             <span className="fire">🔥 {summary.sessions} sessions</span>
             <span className="muted">{summary.activeDays}/7 active days this week</span>
+          </div>
+          <div className="week-strip">
+            {summary.byDay.map((d, i) => {
+              const isToday = i === summary.byDay.length - 1;
+              const active = d.count > 0;
+              return (
+                <div key={d.date} className={`day-col${isToday ? " today" : ""}`}>
+                  <div className={`day-dot${active ? " active" : ""}`}>
+                    {active ? d.count : ""}
+                  </div>
+                  <div className="day-date">{parseInt(d.date.slice(8), 10)}</div>
+                </div>
+              );
+            })}
           </div>
           {summary.progress.length > 0 && (
             <div className="progress-row">
