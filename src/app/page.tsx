@@ -20,6 +20,7 @@ const CATEGORY_EMOJI: Record<string, string> = {
   bone: "🦴",
   core: "🌀",
   cardio: "🏃",
+  pt: "🩺",
 };
 
 const PROGRESS_SUFFIX: Record<string, string> = {
@@ -247,8 +248,12 @@ export default function Home() {
   const presentCats = Array.from(
     new Set(states.map((s) => s.config.category).filter(Boolean) as string[]),
   );
-  const catOrder = ["upper", "lower", "impact", "carry", "bone", "core", "cardio"];
-  const categories = ["All", ...catOrder.filter((c) => presentCats.includes(c))];
+  const catOrder = ["upper", "lower", "impact", "carry", "bone", "core", "cardio", "pt"];
+  const categories = [
+    "All",
+    ...catOrder.filter((c) => presentCats.includes(c)),
+    ...presentCats.filter((c) => !catOrder.includes(c)).sort(),
+  ];
 
   const visible = states.filter(
     (s) => category === "All" || s.config.category === category,
